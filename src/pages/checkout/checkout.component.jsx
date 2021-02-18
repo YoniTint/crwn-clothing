@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import PayPalCheckoutButton from '../../components/paypal-button/paypal-button.component';
 
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors';
 
@@ -34,9 +35,12 @@ const CheckoutPage = ({ cartItems, total }) => (
 		<div className='test-warning'>
 			*Please use the following test credit cart for payments*
 			<br />
-			
+			Email: sb-example@business.example.com
+			<br />
+			Password: 12345678Ab# 
 		</div>
-		{/*integrate Payment Button}*/}
+		<br />
+		<PayPalCheckoutButton price={total} />
 	</div>	
 );
 
